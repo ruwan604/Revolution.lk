@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolution.lk | Premium Fashion & Fancy Items</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#ff0000',
+                            dark: '#0a0a0a',
+                            gray: '#1a1a1a'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+        }
+        
+        .cinematic-glow {
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+        }
+        
+        .power-btn-glow {
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% { filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.6)); }
+            50% { filter: drop-shadow(0 0 15px rgba(255, 0, 0, 1)); }
+            100% { filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.6)); }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            border-color: rgba(255, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-bold tracking-wider flex items-center group">
+                        <span class="text-white">Rev</span>
+                        <i class="fa-solid fa-power-off text-brand-red mx-1 text-2xl power-btn-glow transform group-hover:rotate-180 transition-transform duration-700"></i>
+                        <span class="text-white">lution.lk</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-brand-red transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#latest" class="hover:text-brand-red transition-colors px-3 py-2 rounded-md text-sm font-medium">Latest Drops</a>
+                        <a href="#fancy" class="hover:text-brand-red transition-colors px-3 py-2 rounded-md text-sm font-medium">Fancy Items</a>
+                        <a href="#contact" class="bg-brand-red hover:bg-red-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-[0_0_15px_rgba(255,0,0,0.5)] hover:shadow-[0_0_25px_rgba(255,0,0,0.7)]">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-b border-white/10">
+                <a href="#home" class="text-gray-300 hover:text-brand-red block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#latest" class="text-gray-300 hover:text-brand-red block px-3 py-2 rounded-md text-base font-medium">Latest Drops</a>
+                <a href="#fancy" class="text-gray-300 hover:text-brand-red block px-3 py-2 rounded-md text-base font-medium">Fancy Items</a>
+                <a href="#contact" class="text-brand-red font-bold block px-3 py-2 rounded-md text-base">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Gradient/Effect -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-black to-brand-dark opacity-90 z-10"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40"></div>
+        
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto">
+            <h2 class="text-brand-red tracking-[0.5em] text-sm md:text-xl font-bold mb-4 uppercase animate-pulse">Welcome to the Future of Fashion</h2>
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight leading-tight">
+                <span class="block text-white mb-2">JOIN THE</span>
+                <span class="cinematic-glow text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-500">REVOLUTION</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-2xl mb-10 max-w-2xl mx-auto font-light">
+                Discover the most exclusive collection of high-end clothing and luxury fancy items in Sri Lanka.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#latest" class="group relative px-8 py-4 bg-transparent border border-brand-red text-white font-bold text-lg overflow-hidden rounded-sm transition-all hover:bg-brand-red hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]">
+                    <span class="relative z-10">Shop Collection</span>
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-white/5 backdrop-blur border border-white/20 text-white font-bold text-lg rounded-sm hover:bg-white/10 transition-all">
+                    Contact via WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Products Section (Clothes) -->
+    <section id="latest" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-2">Latest <span class="text-brand-red">Drops</span></h2>
+                    <p class="text-gray-400">Premium clothing for the modern era.</p>
+                </div>
+                <a href="#" class="hidden md:flex items-center text-brand-red hover:text-white transition-colors">
+                    View All <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="glass-card rounded-xl overflow-hidden group">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551028919-ac6635f0e5c9?q=80&w=1000&auto=format&fit=crop" alt="Leather Jacket" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <button class="w-full bg-brand-red text-white py-3 font-bold rounded shadow-lg">View Details</button>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded">NEW</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Midnight Leather Jacket</h3>
+                        <p class="text-gray-400 text-sm mb-4">Italian leather, slim fit, premium hardware.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-white">LKR 18,500</span>
+                            <div class="flex space-x-2 text-gray-500">
+                                <i class="fa-solid fa-star text-yellow-500"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="glass-card rounded-xl overflow-hidden group">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1000&auto=format&fit=crop" alt="Designer Shirt" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <button class="w-full bg-brand-red text-white py-3 font-bold rounded shadow-lg">View Details</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Onyx Silk Shirt</h3>
+                        <p class="text-gray-400 text-sm mb-4">100% Satin Silk, breathable, luxury feel.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-white">LKR 8,900</span>
+                            <div class="flex space-x-2 text-gray-500">
+                                <i class="fa-solid fa-star text-yellow-500"></i>
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="glass-card rounded-xl overflow-hidden group">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1000&auto=format&fit=crop" alt="Streetwear Hoodie" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <button class="w-full bg-brand-red text-white py-3 font-bold rounded shadow-lg">View Details</button>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white text-black text-xs font-bold px-3 py-1 rounded">HOT</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Urban Oversized Hoodie</h3>
+                        <p class="text-gray-400 text-sm mb-4">Heavyweight cotton, embroidered logo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-white">LKR 6,500</span>
+                            <div class="flex space-x-2 text-gray-500">
+                                <i class="fa-solid fa-star text-yellow-500"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fancy Items Section -->
+    <section id="fancy" class="py-24 bg-black relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4"><span class="text-brand-red">Fancy</span> Collection</h2>
+                <div class="w-24 h-1 bg-brand-red mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Fancy Item 1 -->
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white/5 transition-all">
+                    <div class="w-full h-48 bg-gray-900 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                         <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1000&auto=format&fit=crop" class="h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Luxury Watch</h4>
+                    <p class="text-brand-red font-bold mt-2">LKR 25,000</p>
+                </div>
+                
+                <!-- Fancy Item 2 -->
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white/5 transition-all">
+                    <div class="w-full h-48 bg-gray-900 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                         <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1000&auto=format&fit=crop" class="h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Designer Shades</h4>
+                    <p class="text-brand-red font-bold mt-2">LKR 5,500</p>
+                </div>
+
+                <!-- Fancy Item 3 -->
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white/5 transition-all">
+                    <div class="w-full h-48 bg-gray-900 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                         <img src="https://images.unsplash.com/photo-1617042375876-a13e36732a04?q=80&w=1000&auto=format&fit=crop" class="h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Premium Wallet</h4>
+                    <p class="text-brand-red font-bold mt-2">LKR 4,200</p>
+                </div>
+
+                <!-- Fancy Item 4 -->
+                <div class="glass-card p-4 rounded-xl text-center hover:bg-white/5 transition-all">
+                    <div class="w-full h-48 bg-gray-900 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                         <img src="https://images.unsplash.com/photo-1629367494173-c78a56567877?q=80&w=1000&auto=format&fit=crop" class="h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Gold Chain</h4>
+                    <p class="text-brand-red font-bold mt-2">LKR 12,000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment & Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-t from-black to-brand-dark border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-8">Ready to <span class="text-brand-red">Order?</span></h2>
+            <p class="text-gray-400 mb-12">We accept all major credit cards and offer Cash on Delivery island-wide.</p>
+            
+            <!-- Payment Icons -->
+            <div class="flex flex-wrap justify-center gap-6 mb-16 text-4xl text-gray-500">
+                <i class="fa-brands fa-cc-visa hover:text-white transition-colors"></i>
+                <i class="fa-brands fa-cc-mastercard hover:text-white transition-colors"></i>
+                <i class="fa-solid fa-money-bill-wave hover:text-white transition-colors" title="Cash on Delivery"></i>
+                <i class="fa-solid fa-building-columns hover:text-white transition-colors" title="Bank Transfer"></i>
+            </div>
+
+            <!-- Contact Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="https://wa.me/94700000000" target="_blank" class="flex flex-col items-center justify-center p-8 glass-card rounded-2xl hover:bg-green-900/20 group cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">WhatsApp</h3>
+                    <p class="text-gray-400 text-sm mt-2">Chat with us directly</p>
+                </a>
+
+                <a href="https://t.me/revolutionlk" target="_blank" class="flex flex-col items-center justify-center p-8 glass-card rounded-2xl hover:bg-blue-900/20 group cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-telegram text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Telegram</h3>
+                    <p class="text-gray-400 text-sm mt-2">Join our channel</p>
+                </a>
+
+                <a href="mailto:contact@revolution.lk" class="flex flex-col items-center justify-center p-8 glass-card rounded-2xl hover:bg-red-900/20 group cursor-pointer transition-all">
+                    <div class="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-envelope text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Email Us</h3>
+                    <p class="text-gray-400 text-sm mt-2">Get a quote</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-white/10">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-4">
+               <span class="text-xl font-bold tracking-wider flex items-center">
+                    <span class="text-white">Rev</span>
+                    <i class="fa-solid fa-power-off text-brand-red mx-1 text-lg power-btn-glow"></i>
+                    <span class="text-white">lution.lk</span>
+                </span>
+            </div>
+            <p class="text-gray-600 text-sm">&copy; 2026 Revolution.lk. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
